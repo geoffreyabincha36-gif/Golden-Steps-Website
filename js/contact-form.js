@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             // Send the data to your Node.js server
-            fetch('http://localhost:3000/send-email', {
+            fetch(https://golden-steps-api.onrender.com/send-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
