@@ -582,48 +582,32 @@ footer {
     color: #f8f8f8;
 }
 
+/* Media query for screens smaller than 768px (e.g., phones) */
 @media (max-width: 768px) {
-    .two-column-hero {
+    .hero-container {
         flex-direction: column;
-        text-align: center;
+        /* Stacks the hero content and stats vertically */
+        padding: 10px;
+        /* Adjusts padding for smaller screens */
     }
-}
 
-.hero-container {
-    display: flex;
-    /* Aligns children (hero content and stats) side-by-side */
-    justify-content: space-between;
-    /* Spreads out the two sections */
-    align-items: center;
-    /* Vertically aligns them */
-    padding: 20px;
-    width: 100%;
-    max-height: 500px;
-}
-/* Style for the main hero text and buttons */
-.hero-content {
-    flex-basis: 60%;
-    /* Gives the hero content 60% of the container's width */
-    padding-right: 30px;
-}
+    .hero-content {
+        flex-basis: 100%;
+        /* Makes the hero content take up the full width */
+        padding-right: 0;
+        /* Removes the right padding on mobile */
+        margin-bottom: 20px;
+        /* Adds space below the hero content */
+    }
 
-/* Style for the container of the stats boxes */
-.hero-stats {
-    flex-basis: 40%;
-    /* Gives the stats 40% of the container's width */
-    display: flex;
-    flex-direction: column;
-    /* Stacks the stat boxes vertically */
-    justify-content: center;
-    /* Vertically centers the stat boxes */
-    gap: 10px;
-    /* Adds space between the stat boxes */
-    padding-left: 20px;
-    /* Adds some padding to the left */
-    max-height: 400px;
-    overflow-y: auto;
-    /* Adds vertical scrolling if content overflows */
-
+    .hero-stats {
+        flex-basis: 100%;
+        /* Makes the stats container take up the full width */
+        flex-direction: row;
+        /* Arranges the stat boxes in a row */
+        justify-content: space-around;
+        padding: 0;
+    }
 }
 
 /* Style for the individual stat boxes */
@@ -1007,4 +991,4 @@ nav {
             animation: spin 3s linear infinite;
             /* This line controls the animation */
         }
-}
+
