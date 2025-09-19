@@ -6,6 +6,8 @@
     color: #ffffff;
     text-align: center;
     padding: 6rem 2rem 4rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #our-story, #mission-vision, #core-values, #thematic-areas, #contact-info, #contact-form {
@@ -13,7 +15,6 @@
     max-width: 900px;
     margin: auto;
     text-align: left;
-
     background-color: #f8f8f8;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -522,6 +523,11 @@ footer {
         grid-template-columns: 1fr;
         /* Stack columns on smaller screens */
         text-align: center;
+        .nav-links {
+            justify-content: center;
+            font-size: 12px;
+            padding: 5px;
+        }
     }
 
     .footer-about {
@@ -559,19 +565,21 @@ footer {
 .stat-box {
     background-color: rgba(255, 255, 255, 0.2);
     padding: 1.5rem 2rem;
+    max-width: 1000px;
     border-radius: 8px;
+
 }
 
 .stat-number {
     font-size: 3rem;
     font-weight: bold;
-    color: #fff;
+    color: #f8f8f8;
     margin-bottom: 0.5rem;
 }
 
 .stat-text {
     font-size: 1rem;
-    color: #fff;
+    color: #f8f8f8;
 }
 
 @media (max-width: 768px) {
@@ -580,11 +588,72 @@ footer {
         text-align: center;
     }
 }
+
+.hero-container {
+    display: flex;
+    /* Aligns children (hero content and stats) side-by-side */
+    justify-content: space-between;
+    /* Spreads out the two sections */
+    align-items: center;
+    /* Vertically aligns them */
+    padding: 20px;
+    width: 100%;
+    max-height: 500px;
+}
+/* Style for the main hero text and buttons */
+.hero-content {
+    flex-basis: 60%;
+    /* Gives the hero content 60% of the container's width */
+    padding-right: 30px;
+}
+
+/* Style for the container of the stats boxes */
+.hero-stats {
+    flex-basis: 40%;
+    /* Gives the stats 40% of the container's width */
+    display: flex;
+    flex-direction: column;
+    /* Stacks the stat boxes vertically */
+    justify-content: center;
+    /* Vertically centers the stat boxes */
+    gap: 10px;
+    /* Adds space between the stat boxes */
+    padding-left: 20px;
+    /* Adds some padding to the left */
+    max-height: 400px;
+    overflow-y: auto;
+    /* Adds vertical scrolling if content overflows */
+
+}
+
+/* Style for the individual stat boxes */
+.stat-box {
+    background-color: #9a8220;
+    /* Use the same color as the example */
+    padding: 20px;
+    margin-bottom: 20px;
+    /* Adds space between the stacked boxes */
+    text-align: center;
+    /* Aligns text to the right */
+    border-radius: 8px;
+    /* Rounds the corners */
+    color: #f8f8f8;
+    /* Light text color for contrast */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Adds a subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transition for hover effects */
+    
+}
 #hero {
     background-color: #937b1d;
     /* A strong green color */
-    color: #fff;
-    padding: 10rem 2rem;
+    color: #f8f8f8;
+    padding-left: 40px;
+    padding-right: 70px;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+    min-height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -592,9 +661,10 @@ footer {
 }
 
 .hero-content {
-    max-width: 1100px;
+    max-width: 1000px;
     width: 100%;
     margin: auto;
+    padding-bottom: 100px;
 }
 
 #hero h1 {
@@ -618,6 +688,61 @@ footer {
     margin-top: 2rem;
     display: flex;
     gap: 1rem;
+}
+
+/* Styles for the container of the hero stats */
+.hero-stats {
+    display: flex;
+    /* Use Flexbox for easy alignment */
+    justify-content: space-around;
+    /* Distributes the items with equal space between them */
+    align-items: center;
+    /* Vertically centers the items */
+    padding: 50px 20px;
+    /* Adds vertical and horizontal padding to the section */
+    background-color: #bab50bb8;
+    /* A light grey background to make it stand out */
+}
+
+/* Styles for each individual statistic item */
+.stat-item {
+    text-align: center;
+    /* Centers the text and numbers */
+    flex-basis: 30%;
+    /* Gives each item a flexible width */
+    max-width: 250px;
+}
+
+/* Styles for the number or key figure */
+.stat-number  {
+    font-size: 3em;
+    /* Makes the numbers large and prominent */
+    font-weight: bold;
+    color: #f8f8f8;
+    /* A dark color for the text */
+    margin-bottom: 5px;
+}
+
+/* Styles for the label text below the number */
+.stat-text  {
+    font-size: 1.2em;
+    color: #f8f8f8;
+    line-height: 1.5;
+}
+
+/* ------------------------------------------- */
+/* Media Query for Mobile Responsiveness       */
+/* ------------------------------------------- */
+@media (max-width: 768px) {
+    .hero-stats {
+        flex-direction: column;
+        /* Stacks the items vertically on small screens */
+    }
+
+    .stat-item {
+        margin-bottom: 30px;
+        /* Adds spacing between the stacked items */
+    }
 }
 
 .btn {
@@ -803,9 +928,24 @@ nav {
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    gap: 15px;
     max-width: 1100px;
+    padding: 20px;
     margin: auto;
+
+    /* Style for ALL photos in the grid */
+        .gallery-grid img {
+            width: 100%;
+            /* Makes the image fill its grid cell horizontally */
+            height: 200px;
+            /* Set a fixed height for all images */
+            object-fit: cover;
+            /* This is crucial: it crops the image to fit the box without distortion */
+            display: block;
+            /* Removes extra space below the image */
+            border-radius: 5px;
+            /* Optional: adds slightly rounded corners */
+        }
 }
 
 .gallery-item {
@@ -825,4 +965,46 @@ nav {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #937b1d;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 5s linear infinite;
+    margin-left: 20px;
+    
+    /* Adjust spacing as needed */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+        }
+    
+        #preloader::after {
+            /* ... other styles ... */
+            animation: spin 3s linear infinite;
+            /* This line controls the animation */
+        }
 }
