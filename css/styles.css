@@ -603,6 +603,7 @@ footer {
 .hero-content {
     text-align: left;
     margin-bottom: 20px;
+    
     /* Adds space below the hero text on mobile */
 }
 
@@ -617,21 +618,7 @@ footer {
     padding: 20px 0;
 }
 
-.stat-item {
-    text-align: center;
-    flex-basis: 30%;
-    /* Gives each stat item a flexible width */
-    max-width: 250px;
-}
-
-.stat-item h3 {
-    font-size: 2em;
-    /* Adjust font size for mobile */
-    font-weight: bold;
-    color: #333;
-}
-
-.stat-item p {
+.stat-number {
     font-size: 0.9em;
     color: #666;
 }
@@ -645,6 +632,9 @@ footer {
         /* Arrange items horizontally on desktop */
         justify-content: space-between;
         align-items: center;
+        padding: 0%;
+        width: 100%;
+    
     }
 
     .hero-content {
@@ -652,6 +642,7 @@ footer {
         /* Give the hero content 60% of the space */
         margin-bottom: 0;
         /* Remove bottom margin on desktop */
+        padding-right: 20px;
     }
 
     .hero-stats {
@@ -661,11 +652,17 @@ footer {
         /* Stack the stat items vertically on desktop */
         padding: 0;
         /* Remove padding on desktop */
+        justify-content: center;
+        align-items: flex-end;
+        /* Align items to the right */
+        gap: 30px;
+        
+        
     }
 
     .stat-number {
         margin-bottom: 20px;
-        text-align: right;
+        text-align: center;
         /* Align text to the right for a clean look */
     }
 
@@ -714,8 +711,8 @@ footer {
 }
 
 .hero-content {
-    max-width: 1000px;
-    width: 100%;
+    max-width: 1200px;
+    width: 80%;
     margin: auto;
     padding-bottom: 100px;
 }
@@ -1047,4 +1044,4 @@ nav {
             animation: spin 3s linear infinite;
             /* This line controls the animation */
         }
-}
+
