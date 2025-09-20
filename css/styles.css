@@ -1046,6 +1046,7 @@ nav {
             animation: spin 3s linear infinite;
             /* This line controls the animation */
         }
+        
 /* This is the class we will add to the active link */
 .active-link {
     color: #937b1d;
