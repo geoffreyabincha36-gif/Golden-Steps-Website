@@ -354,6 +354,8 @@ nav {
 #contact-info {
     order: 1;
     /* Ensures the info column comes first on all screen sizes */
+    padding: 50px;
+    border-radius: 8px;
 }
 
 #contact-form {
@@ -616,6 +618,24 @@ footer {
     background-color: #f4f4f4;
     /* A light background color for the stats */
     padding: 20px 0;
+}
+.hero-stats-wrapper {
+    height: 300px;
+    /* Set a fixed height for the container */
+    overflow-y: scroll;
+    /* This is the key property that adds a vertical scrollbar */
+    padding-right: 15px;
+    /* Adds space for the scrollbar so it doesn't overlap content */
+}
+
+/* Optional: style the scrollbar for a cleaner look */
+.hero-stats-wrapper::-webkit-scrollbar {
+    width: 8px;
+}
+
+.hero-stats-wrapper::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
 }
 
 .stat-number {
@@ -1010,7 +1030,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: #f8f8f8;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1044,4 +1064,24 @@ nav {
             animation: spin 3s linear infinite;
             /* This line controls the animation */
         }
+/* This is the class we will add to the active link */
+.active-link {
+    color: #937b1d;
+    /* Change the color of the link text */
+    border-bottom: 2px solid #937b1d;
+    /* Add a green line below the link */
+    font-weight: bold;
+    /* Make the text bold */
+}
+/* This is the style for your regular navigation links */
+.nav-item {
+    color: #937b1d;
+    transition: color 0.3s ease;
+    /* Adds a smooth transition effect */
+}
 
+/* This is the style for the link when the cursor hovers over it */
+.nav-item:hover {
+    color: #000080;
+    /* Change this to the color you want on hover */
+}

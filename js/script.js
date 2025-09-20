@@ -103,3 +103,22 @@ window.addEventListener('load', function () {
   }, 500); // Hides the element after the transition
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  // Get the current URL path (e.g., "/about.html")
+  const currentPagePath = window.location.pathname;
+
+  // Get all navigation links
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  // Loop through each link
+  navLinks.forEach(link => {
+    // Get the href attribute of the link
+    const linkPath = link.getAttribute('href');
+
+    // Compare the link's path with the current page's path
+    if (linkPath && currentPagePath.includes(linkPath)) {
+      // Add the 'active-link' class if they match
+      link.classList.add('active-link');
+    }
+  });
+});
