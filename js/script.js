@@ -95,29 +95,21 @@ document.addEventListener('DOMContentLoaded', () => {
   showSlide(currentSlide);
 });
 
-window.addEventListener('load', function () {
-  const preloader = document.getElementById('preloader');
-  preloader.style.opacity = '0';
-  setTimeout(() => {
-    preloader.style.display = 'none';
-  }, 500); // Hides the element after the transition
-});
-
 document.addEventListener('DOMContentLoaded', function () {
-  const currentPagePath = window.location.pathname.split('/').pop();
+  // Get the current URL path (e.g., "/about.html")
+  const currentPagePath = window.location.pathname;
+
+  // Get all navigation links
   const navLinks = document.querySelectorAll('.nav-links a');
 
+  // Loop through each link
   navLinks.forEach(link => {
-    let linkPath = link.getAttribute('href');
+    // Get the href attribute of the link
+    const linkPath = link.getAttribute('href');
 
-    // Check if the link's href is an empty string or '/' (common for home page)
-    // and if the current page is indeed the root or index.html
-    if (linkPath === 'index.html' && (currentPagePath === '' || currentPagePath === 'index.html')) {
-      link.classList.add('active-link');
-    }
-
-    // Check if the current page path ends with the link's href
-    else if (linkPath !== 'index.html' && currentPagePath.includes(linkPath)) {
+    // Compare the link's path with the current page's path
+    if (linkPath && currentPagePath.includes(linkPath)) {
+      // Add the 'active-link' class if they match
       link.classList.add('active-link');
     }
   });

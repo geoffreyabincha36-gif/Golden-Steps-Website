@@ -619,24 +619,6 @@ footer {
     /* A light background color for the stats */
     padding: 20px 0;
 }
-.hero-stats-wrapper {
-    height: 300px;
-    /* Set a fixed height for the container */
-    overflow-y: scroll;
-    /* This is the key property that adds a vertical scrollbar */
-    padding-right: 15px;
-    /* Adds space for the scrollbar so it doesn't overlap content */
-}
-
-/* Optional: style the scrollbar for a cleaner look */
-.hero-stats-wrapper::-webkit-scrollbar {
-    width: 8px;
-}
-
-.hero-stats-wrapper::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 4px;
-}
 
 .stat-number {
     font-size: 0.9em;
