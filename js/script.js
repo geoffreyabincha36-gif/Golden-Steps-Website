@@ -104,21 +104,19 @@ window.addEventListener('load', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Get the current URL pathname
-  const currentPagePath = window.location.pathname;
-
-  // Get all navigation links
+  const currentPagePath = window.location.pathname.split('/').pop();
   const navLinks = document.querySelectorAll('.nav-links a');
 
   navLinks.forEach(link => {
     let linkPath = link.getAttribute('href');
 
-    // Handle the home page link specifically
-    if (linkPath === 'index.html' && (currentPagePath === '/' || currentPagePath.includes('index.html'))) {
+    // Check if the link's href is an empty string or '/' (common for home page)
+    // and if the current page is indeed the root or index.html
+    if (linkPath === 'index.html' && (currentPagePath === '' || currentPagePath === 'index.html')) {
       link.classList.add('active-link');
     }
 
-    // Handle all other pages
+    // Check if the current page path ends with the link's href
     else if (linkPath !== 'index.html' && currentPagePath.includes(linkPath)) {
       link.classList.add('active-link');
     }
