@@ -104,20 +104,22 @@ window.addEventListener('load', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Get the current URL path (e.g., "/about.html")
+  // Get the current URL pathname
   const currentPagePath = window.location.pathname;
 
   // Get all navigation links
   const navLinks = document.querySelectorAll('.nav-links a');
 
-  // Loop through each link
   navLinks.forEach(link => {
-    // Get the href attribute of the link
-    const linkPath = link.getAttribute('href');
+    let linkPath = link.getAttribute('href');
 
-    // Compare the link's path with the current page's path
-    if (linkPath && currentPagePath.includes(linkPath)) {
-      // Add the 'active-link' class if they match
+    // Handle the home page link specifically
+    if (linkPath === 'index.html' && (currentPagePath === '/' || currentPagePath.includes('index.html'))) {
+      link.classList.add('active-link');
+    }
+
+    // Handle all other pages
+    else if (linkPath !== 'index.html' && currentPagePath.includes(linkPath)) {
       link.classList.add('active-link');
     }
   });
